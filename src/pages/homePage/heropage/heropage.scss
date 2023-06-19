@@ -1,0 +1,122 @@
+@import "../../../mixingscss/mixin.scss";
+
+.heropage {
+    width: 100%;
+    height: 450px;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include md {
+        height: 700px;
+    }
+
+    .bgdropimg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        overflow: hidden;
+
+
+        .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
+    .opacitylayer {
+        width: 100%;
+        height: 225px;
+        background: linear-gradient(180deg,
+                rgba(4, 21, 45, 0) 0%,
+                #04152d 79.17%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .wrappercontent {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        color: white;
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+
+        .title {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 8px;
+
+            @include md {
+                font-size: 80px;
+                margin-bottom: 0px;
+            }
+
+
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+
+            @include md {
+                font-size: 24px;
+            }
+        }
+
+        .searchinput {
+            width: 100%;
+            display: flex;
+            font-size: 18px;
+            text-align: center;
+
+            .inputclass {
+                width: calc(100% - 100px);
+                height: 50px;
+                border: 0;
+                outline: 0;
+                padding: 0px 30px;
+                border-radius: 30px 0 0 30px;
+
+                @include md {
+                    width: calc(100% - 150px);
+                    height: 60px;
+                    font-size: 18px;
+                }
+            }
+
+            .btnsearch {
+                width: 100px;
+                height: 50px;
+                border: 0;
+                outline: 0;
+                font-size: 18px;
+                border-radius: 0 30px 30px 0;
+                background: var(--gradient);
+                color: white;
+
+                @include md {
+                    height: 60px;
+                    width: 150px;
+                }
+            }
+        }
+
+    }
+
+    
+}
